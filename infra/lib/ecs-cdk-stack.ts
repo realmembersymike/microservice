@@ -204,7 +204,7 @@ export class EcsCdkStack extends cdk.Stack {
               'echo "Pushing"',
               'docker push $ECR_REPO_URI:$TAG',
               'cd ..',
-              "printf '[{\"name\":\"node-app\",\"imageUri\":\"%s\"}]' $ECR_REPO_URI:$TAG > imagedefinitions.json",
+              "printf '[{\"name\":\"microrepo\",\"imageUri\":\"%s\"}]' $ECR_REPO_URI:$TAG > imagedefinitions.json",
               "pwd; ls -al; cat imagedefinitions.json"
             ]
           }
