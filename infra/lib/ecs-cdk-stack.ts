@@ -92,7 +92,7 @@ export class EcsCdkStack extends cdk.Stack {
      */
   
     const container = taskDef.addContainer('NodeContainer', {
-      containerName: 'nodeapp',
+      containerName: 'microrepo',
       image: ecs.ContainerImage.fromAsset('../node-app', ),
       memoryLimitMiB: 256,
       cpu: 256,
