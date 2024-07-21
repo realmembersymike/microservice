@@ -6,6 +6,8 @@ The infrastructure uses the AWS CDK to descibe its infrastructure using typescri
 
 Read More About the CDK [Here](https://aws.amazon.com/cdk/). 
 
+![source](./assets/cfn.yaml.png)
+
 # Overview
 
 **Inital Deploy Creates**
@@ -23,11 +25,18 @@ The first deploy also builds the initial container as defined in `/node-app`, fo
 After the first deployment, Github Webhooks are used to trigger deployments. This is setup by the infrastructure code, the CodeBuild project created on the first deploy is the mechanism that listens for the Github Webhooks. 
 
 
+**The build steps:**
+
 The infrastructure code will build a pipeline with 4 stages, as shown below. After the first infrastructure deploy, the container that holds the webapp can be developed and built for production independently.
 
-The build steps:
-
-![diagram simple](./assets/workflow.png)
+Codebuild recieves webhook from Github
+![source](./assets/commit.png)
+Builds New Image
+![source](./assets/build.png)
+Optionally Require Manual Approval 
+![source](./assets/approve.png)
+Ship New Fargate Task If Healthcheck Pass
+![source](./assets/deploy.png)
 
 # Prerequisites
 
