@@ -47,7 +47,6 @@ Using the Github website, navigate to Settings/Developer Settings/Personal acces
 **admin:org_hook**   
 **repo** 
 
-
 ### 3. Store Token Securly
 
 Use AWS Secrets manager for easy and secure token storage. 
